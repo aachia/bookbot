@@ -11,3 +11,14 @@ def get_character_count(text):
         else:
             char_dict[lowered] += 1
     return char_dict
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dictionary(dict):
+    sorted_list = []
+    for key in dict:
+        if key.isalpha():
+            sorted_list.append({"char": key, "num": dict[key]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
